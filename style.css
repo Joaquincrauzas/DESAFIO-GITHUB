@@ -335,11 +335,11 @@ header nav{
 
 @keyframes titulo4 {
     5%{
-        background-color: rgb(194, 243, 243);
+        background-color: rgb(90, 36, 228);
     }
 
     20%{
-        background-color: rgb(206, 94, 94);
+        background-color: rgb(52, 176, 24);
         border-radius: 40%;
     }
 }
