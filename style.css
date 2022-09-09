@@ -39,7 +39,6 @@ header{
     border-radius: 50%;
 
 }
-
 .logo:hover{
     transform:scale(2);
     transition: all 5s;
@@ -120,7 +119,6 @@ header nav{
     padding: 50px;
     transition: all 2s;
 }
-
 .topfive:hover{
     transform:  rotate(90deg) scale(2) translateX(100px);
     -webkit-transform: rotate(90deg) scale(2) translateX(100px);
@@ -230,7 +228,6 @@ header nav{
         border-radius: 40%;
     }
 }
-
 .primerevento{
     display: flex;
     justify-content: left;
@@ -551,7 +548,6 @@ header nav{
     text-align: center;
     margin-left: 500px;
 }
-
 .h1pe:hover{
     animation: animandoDos 5s;
 }
@@ -584,10 +580,11 @@ header nav{
     padding: 10px;
     transition: all 5s;
 }
-
 .h2pe:hover{
     transform: scale(2);
 }
+
+
 .h2__pe{
     display: flex;
     flex-direction: row;
