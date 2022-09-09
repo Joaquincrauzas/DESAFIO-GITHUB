@@ -179,6 +179,20 @@ header nav{
     text-align: center;
     margin-left: 500px;
 }
+.titulo2:hover{
+    animation: titulo2 5s;
+}
+
+@keyframes titulo2 {
+    5%{
+        background-color: rgb(16, 120, 120);
+    }
+
+    20%{
+        background-color: rgb(78, 14, 14);
+        border-radius: 40%;
+    }
+}
 
 .tresamigos{
     display: flex;
@@ -313,6 +327,21 @@ header nav{
     padding: 100px;
     text-align: center;
     margin-left: 500px;
+}
+
+.titulo4:hover{
+    animation: titulo4 5s;
+}
+
+@keyframes titulo4 {
+    5%{
+        background-color: rgb(194, 243, 243);
+    }
+
+    20%{
+        background-color: rgb(206, 94, 94);
+        border-radius: 40%;
+    }
 }
 
 .packbasico1{
