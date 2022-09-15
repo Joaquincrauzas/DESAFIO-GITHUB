@@ -649,13 +649,15 @@ header nav{
 .containerHeader{
     display: grid;
     align-items: center;
-    grid-template-columns: 2fr;
-    grid-template-rows: 4fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr;
     grid-template-areas: 
-    "logo logo"
-    "header1 header2"
-    "header3 header4"
-    "header5 header5";
+    "logo "
+    "header1" 
+    "header2"
+    "header3"
+    "header4"
+    "header5";
 }
 .logo{
     grid-area: logo;
