@@ -8,8 +8,7 @@ html{
 }
 
 .body{
-    background-color: #030d11;
-    background-image: linear-gradient(180deg, #030d11 0%, #211d1f 100%);     
+    background-color: black;
 }
 
 h3{
@@ -37,11 +36,10 @@ header{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-
 }
 .logo:hover{
-    transform:scale(2);
-    transition: all 5s;
+    transform: rotate(400deg);
+    transition: all 10s;
 }
 
 .containerHeader:hover .containerUno,
@@ -49,7 +47,7 @@ header{
 .containerHeader:hover .containerTres,
 .containerHeader:hover .containerCuatro,
 .containerHeader:hover .containerCinco{
-    transform:scale(2);
+    transform:scale(2)
 }
 
 .containerUno{
@@ -61,7 +59,7 @@ header{
 }
 
 .containerTres{
-    transition: all 3s ease-out;
+    transition: all 3s ease-in;
 }
 
 .containerCuatro{
@@ -71,15 +69,17 @@ header{
 .containerCinco{
     transition: all 3s ease-in;
 }
+
 header a{
-    margin: 2px;
-    padding: 2px;
+    margin: 5px;
+    padding: 5px;
     text-decoration: none;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 125%;
     border: 2px solid white;
     border-radius: 6px;
+    width: 60px;
 
 }
 
@@ -117,14 +117,8 @@ header nav{
     text-decoration: none;
     margin: 50px;
     padding: 50px;
-    transition: all 2s;
 }
-.topfive:hover{
-    transform:  rotate(90deg) scale(2) translateX(100px);
-    -webkit-transform: rotate(90deg) scale(2) translateX(100px);
-    -o-transform: rotate(90deg) scale(2) translateX(100px);
-    -moz-transform: rotate(90deg) scale(2) translateX(100px);
-}
+
 .topfiveH3{
     margin: 5px;
     padding: 5px;
@@ -178,6 +172,15 @@ header nav{
     padding: 90px;
     text-align: center;
     margin-left: 500px;
+    animation-name: titulo2;
+    animation-duration: 10s;
+}   
+@keyframes titulo2 {
+    0%{background-color: aqua;}
+    50%{background-color: white;}
+    75%{font-family: Arial, Helvetica, sans-serif;}
+    90%{border-radius: 30%;}
+    
 }
 
 .tresamigos{
@@ -192,9 +195,18 @@ header nav{
     width: 40px;
     right: 400px;
 }
+.tresamigos1 section img{
+    animation-name: tresamigosFoto;
+    animation-duration: 10s;
+}
 
-.tresamigosFoto nav img{
-    border-radius: 10px 50px;
+@keyframes tresamigosFoto {
+    20%{border-radius: 70%;}
+    50%{border-radius: 30%;}
+    70%{border: 3px solid white}
+    90%{border-radius: 90%;
+  
+}
 }
 
 /*TERCERA PARTE*/  
@@ -214,20 +226,7 @@ header nav{
     text-align: center;
     margin-left: 500px;
 }
-.titulo3:hover{
-    animation: animando 5s;
-}
 
-@keyframes animando {
-    5%{
-        background-color: rgb(194, 243, 243);
-    }
-
-    20%{
-        background-color: rgb(206, 94, 94);
-        border-radius: 40%;
-    }
-}
 .primerevento{
     display: flex;
     justify-content: left;
@@ -547,29 +546,15 @@ header nav{
     padding: 90px;
     text-align: center;
     margin-left: 500px;
+    animation-name: proximoseventos;
+    animation-duration: 5s;
 }
-.h1pe:hover{
-    animation: animandoDos 5s;
-}
-
-@keyframes animandoDos {
-    5%{
-        background-color: rgb(194, 243, 243);
-    }
-
-    20%{
-        background-color: rgb(206, 94, 94);
-        border-radius: 40%;
-    }
-    30%{
-        background-color: green;
-        border: 0;
-    }
-    50%{
-        background-color: blue;
-        border: 15%;
-
-    }
+@keyframes proximoseventos {
+    0%{background-color: aqua;}
+    50%{background-color: white;}
+    75%{font-family: Arial, Helvetica, sans-serif;}
+    90%{border-radius: 30%;}
+    
 }
 .h2pe{
     display: flex;
@@ -578,13 +563,7 @@ header nav{
     color: white;
     margin: 10px;
     padding: 10px;
-    transition: all 5s;
 }
-.h2pe:hover{
-    transform: scale(2);
-}
-
-
 .h2__pe{
     display: flex;
     flex-direction: row;
@@ -661,245 +640,381 @@ header nav{
 }
 
 @media only screen and (max-width: 576px) {
-   
-header{
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    justify-items: self-start;
-    font-size: 200%;
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
-header .logo{
-    width: 400px;
-    right: 400px;
+.containerHeader{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr;
+    grid-template-rows: 4fr;
+    grid-template-areas: 
+    "logo logo"
+    "header1 header2"
+    "header3 header4"
+    "header5 header5";
 }
-
-.fondo{
-    padding: 5px;
+.logo{
+    grid-area: logo;
+}
+.containerUno{
+    grid-area: header1;
+} 
+.containerDos{
+    grid-area: header2;
+}
+.containerTres{
+    grid-area: header3;
+}
+.containerCuatro{
+    grid-area: header4;
+}
+.containerCinco{
+    grid-area: header5;
+}
+.containerHeader:hover .containerUno,
+.containerHeader:hover .containerDos,
+.containerHeader:hover .containerTres,
+.containerHeader:hover .containerCuatro,
+.containerHeader:hover .containerCinco{
+    transform:none
 }
 
 .fondo img{
-    width: 800px;
-    right: 700px;
-}
-.topfive{
-    flex-direction: column;
-    font-size: 150%;
+    width: 420px;
+    height: 350px;
 }
 
-.topfivespotify{
-    font-size: 150%;
+.topfive{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas:
+    "topfivespotify"
+    "topfiveh3";
 }
+
+.topfiveH3{
+    grid-area: topfiveH3;
+}
+.topfivespotify{
+    grid-area: topfivespotify;
+}
+
 .recomendados{
-    flex-direction: column;
-    font-size: 150%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: 
+    "recomendadosH3"
+    "recomendadossouncloud";
+}
+.recomendadosH3{
+    grid-area: recomendadosH3;
 }
 
 .recomendadossouncloud{
-    font-size: 150%;
+    grid-area: recomendadossouncloud;
+    width: 150px;
 }
+
+.tresamigos1{
+    grid-template-columns: 2fr;
+    grid-template-rows: 2fr;
+    align-items: left;
+    grid-template-areas: 
+    "titulo 2 titulo2"
+    "tresamigos tresamigos";
+}
+
 .titulo2{
-    justify-content: center;
-    margin-left: 270px;
-    font-size: 250%;
+    grid-area: titulo2;
+    margin-left: 100px;
+    width: 100px;
 }
+
 .tresamigos{
-    margin: 50px;
-    padding: 50px;
-    font-size: 250%;
+    grid-area: tresamigos;
+    margin: 10px;
+    padding: 10px;
 }
+.tresamigos1 section img{
+    animation-name: tresamigosFoto;
+    animation-duration: 20s;
+}
+@keyframes tresamigosFoto {
 
+        20%{border-radius: 70%;}
+        50%{border-radius: 30%;}
+        70%{border: 3px solid white}
+        90%{border-radius: 90%;
+      
+        }
+}
 .tresamigosFoto{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
+    margin-left: 0;
+    padding: 60px;
 }
-.titulo3{
-    justify-content: center;
-    margin-left: 270px;
-    font-size: 250%;
 
+.tresamigosFoto img{
+    width: 400px;
+    height: 400px;
+}
+
+.container3{
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 4fr;
+    grid-template-areas: 
+    "primerevento primerevento"
+    "proximoseventos proximoseventos"
+    "segundoevento segundoevento"
+    "proximoseventos2 proximoseventos2";
 }
 .primerevento{
-    font-size: 200%;
+    grid-area: primerevento;
 }
 .proximoseventos{
-    font-size: 150%;
-    margin: 10px;
-    padding: 10px;
+    grid-area: proximoseventos;
 }
 .segundoevento{
-    flex-direction: row;
-    justify-content: left;
-    font-size: 200%;
+    grid-area: segundoevento;
 }
 .proximos__eventos{
-    flex-direction: row;
-    justify-content: left;
-    font-size: 150%;
+    grid-area: proximoseventos2;
     margin: 10px;
-    padding: 10px;
+    padding: 40px;
 }
+.titulo3{
+    margin-left: 100px;
+    width: 100px;
+}
+.primerevento{
+    font-size: 150%;
+    width: 200px;
 
+}
+.proximoseventos{
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    width: 150px;
+    margin: 10px;
+    padding: 5px;
+}
+.segundoevento{
+    font-size: 150%;
+    width: 200px;
+
+}
+.proximos__eventos{
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    width: 150px;
+    margin: 10px;
+
+}
 .titulo4{
-    justify-content: center;
-    margin-left: 270px;
-    font-size: 250%;
+    margin-left: 100px;
+    width: 100px;
 }
 .packbasico1{
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:flex-end;
     text-align: center;
-    width: 1000px;
-    right: 1000px;
+    width: 100px;
+
+
 }
 .packbasicotexto{
-    font-size: 230%;
-    margin: 10px;
-    padding: 10px;
+    font-size: 150%;
+    width: 200px;
+
 }
 .packbasico{
-    flex-direction: row;
-    justify-content: center;
-    font-size: 250%;
+    font-size: 150%;
+
 }
 
 .pack__basico{
-    flex-direction: row;
-    justify-items: center;
-    font-size: 120%;
+    font-size: 100%;
     background-color:black;
     color: white;
+    margin: 50px;
+
+}
+
+.packbasico1 .video1{
+    justify-content: left;
+
+}
+
+.packbasico1 .video1{
+    width: 290px;
+    height: 290px;
+    margin: 20px;
+    padding: 10px;
 
 }
 .packintermedio1{
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:flex-end;
     text-align: center;
-    width: 1000px;
-    right: 1000px;
+    width: 100px;
+
 }
 
 .packintermediotexto{
-    font-size: 230%;
-    margin: 10px;
-    padding: 10px;
+    font-size: 150%;
+    width: 200px;
+
 }
 
 .packintermedio{
-    flex-direction: row;
-    justify-content: center;
-    font-size: 250%;
+    font-size: 150%;
+
 }
 .pack__intermedio{
-    flex-direction: row;
-    justify-items: center;
-    font-size: 120%;
+    font-size: 100%;
     background-color:black;
     color: white;
+    margin: 50px;    
+
+}
+.packintermedio1 .video2{
+    width: 290px;
+    height: 290px;
+    margin: 20px;
+    padding: 10px;
+
 }
 .packfull1{
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:flex-end;
     text-align: center;
-    width: 1000px;
-    right: 1000px;
+    width: 100px;
+
 }
 .packfull{
-    flex-direction: row;
-    justify-content: center;
-    font-size: 250%;
+    font-size: 150%;
+
 }
 .packfulltexto1{
-    font-size: 230%;
-    margin: 10px;
-    padding: 10px;
+    font-size: 150%;
+    width: 200px;
+
 }
 .packfulltexto2{
-    font-size: 230%;
-    margin: 10px;
-    padding: 10px;
+    font-size: 150%;
+    width: 200px;
+
 }
 
 .pack__full{
-    flex-direction: row;
-    justify-items: center;
-    font-size: 120%;
+    font-size: 100%;
     background-color:black;
     color: white;
+    margin: 50px;
+
 }
+
+.packfull1 .video3{
+    width: 290px;
+    height: 290px;
+    margin: 20px;
+    padding: 10px;
+
+}
+
 .titulo5{
-    justify-content: center;
-    margin-left: 270px;
-    font-size: 250%;
+    margin-left: 100px;
+    width: 100px;
 }
+
 .imagenmatgeo{
     display: flex;
-    margin: 120px;
-    padding: 100px;
-
-}
-.textomatgeo{
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: 230%;
-
-
+    margin: 40px;
+    padding: 40px;
+    width: 200px;
+    height: 200px;
 }
-
 
 .imagenjcr{
     display: flex;
-    margin: 120px;
-    padding: 100px;
-}
-
-.textojcr{
-    flex-direction: column;
-    align-items: center;
+    justify-items: center;
     justify-content: center;
-    font-size: 230%;
+    margin: 100px;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+
 }
 .titulo6{
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 270px;
-    font-size: 250%;
-
-}
-.texto6{
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
-    padding: 50px;
-    font-size: 260%;
-
+    margin-left: 100px;
+    width: 100px;
 }
 
+.footer img{
+    width: 50px;
+    height: 30px;
+}
 /* proximos eventos */
 .regreso{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    color: white;
+    color: rgb(210, 48, 48);
     font-size: 250%;
 
 }
 .h1pe{
+    width: 250px;
     justify-content: center;
-    margin-left: 250px;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 150%;
+    animation-name: proximoseventos;
+    animation-duration: 5s;
+}
+
+@keyframes proximoseventos {
+    0% {background-color: #aaa;}
+    10% {font-family: Arial, Helvetica, sans-serif;}
+    20% {border-radius: 30%;}
+    50% {background-color: white;}
+    100% {background-color: #aaa;}
+
+}
+
+.primerGrid{
+    display: flex;
     flex-direction: column;
-    font-size: 250%;
+    justify-content: center;
+    align-items: center;
+}
+
+.primerGrid .videoUno{
+    width: 400px;
+    
 }
 
 .h2pe{
     font-size: 250%;
 }
-
-
 
 .h2__pe{
     flex-direction: column;
@@ -907,8 +1022,6 @@ header .logo{
     justify-content: center;
     font-size: 200%;
 }
-
-
 .h3pe{
     font-size: 250%;
 }
@@ -916,5 +1029,14 @@ header .logo{
     align-items: center;
     justify-content: center;
     font-size: 200%;
+}
+.segundoGrid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.segundoGrid .videoDos{
+    width: 400px;
 }
 }
