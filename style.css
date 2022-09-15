@@ -27,7 +27,6 @@ header{
     justify-content: space-around;
     align-items: center;
 }
-
 .logo{
     display: flex;
     flex-wrap: wrap;
@@ -377,7 +376,10 @@ header nav{
     border-radius: 30%;
 }
 
-
+.accordion1{
+    background-color: black;
+    color: black;
+}
 .packfull1{
     display: flex;
     flex-direction: column;
